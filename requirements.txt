@@ -1,0 +1,2 @@
+# Garval Store Requirements
+# This app depends on frappe and erpnext

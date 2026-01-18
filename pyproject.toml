@@ -1,0 +1,14 @@
+[project]
+name = "garval_store"
+version = "0.0.1"
+description = "Garval Store - E-commerce platform with bilingual support"
+authors = [{name = "Kashif Ali"}]
+requires-python = ">=3.10"
+readme = "README.md"
+
+[build-system]
+requires = ["flit_core >=3.2,<4"]
+build-backend = "flit_core.buildapi"
+
+[tool.bench.frappe-dependencies]
+frappe = ">=15.0.0"
