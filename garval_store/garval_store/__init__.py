@@ -1,1 +1,0 @@
-# Garval Store Module
