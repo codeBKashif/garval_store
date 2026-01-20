@@ -3,9 +3,10 @@ import frappe
 
 def after_install():
     """Setup custom fields and permissions after app installation"""
-    create_email_verification_fields()
-    setup_customer_role_permissions()
-    frappe.db.commit()
+    # create_email_verification_fields()
+    # setup_customer_role_permissions()
+    # frappe.db.commit()
+    pass
 
 
 def create_email_verification_fields():

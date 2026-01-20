@@ -5,7 +5,7 @@ setup(
     version="0.0.1",
     description="Garval Store - E-commerce platform with bilingual support",
     author="Kashif Ali",
-    author_email="kashif@example.com",
+    author_email="",
     packages=find_packages(),
     zip_safe=False,
     include_package_data=True,
