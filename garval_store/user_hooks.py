@@ -13,10 +13,13 @@ def on_user_login(login_manager):
 
     # Use ignore_permissions instead of switching users - this preserves session integrity
     try:
-        # Check if this is an SSO login (user has social login but no password set via signup)
-        # SSO users should always have email verified
+        # Only auto-verify email for actual SSO users (those with social login configured)
+        # Regular email/password users must verify via the email link
         if not frappe.db.get_value("User", user, "email_verified"):
-            frappe.db.set_value("User", user, "email_verified", 1, update_modified=False)
+            # Check if user has any social login configured
+            has_social_login = frappe.db.exists("User Social Login", {"parent": user})
+            if has_social_login:
+                frappe.db.set_value("User", user, "email_verified", 1, update_modified=False)
 
         # Check if customer already exists for this user
         from garval_store.utils import get_customer_from_user
